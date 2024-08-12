@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="PauseRecording" Index="-1" />
+      <Action Id="SaveScript" Index="-1" />
+      <Action Id="ShowScript" Index="-1" />
+      <Action Id="ShowInReportV2" AdaptivePriority="0" ShortCaption="Raporlar" Caption="Raporlar" ToolTip="" />
+      <Action Id="Cancel" ShortCaption="Kapat" Caption="Kapat" />
+      <Action Id="ChangePasswordByUser" Caption="Şifremi Değiştir" />
+      <Action Id="CloneObject" ShortCaption="Kopyala" Caption="Kopyala" ToolTip="Obje Kopyala" />
+      <Action Id="Delete" ShortCaption="Sil" Caption="Sil" />
+      <Action Id="DialogCancel" Caption="Çıkış" />
+      <Action Id="DialogClose" Caption="Kapat" />
+      <Action Id="DialogOK" Caption="Tamam" />
+      <Action Id="Edit" ShortCaption="Güncelle" Caption="Güncelle" />
+      <Action Id="Export" Caption="Dışa Aktar" />
+      <Action Id="Link" ShortCaption="Ekle" Caption="Ekle" />
+      <Action Id="ListViewShowObject" Caption="Göster" />
+      <Action Id="Logoff" ShortCaption="Çıkış" Caption="Çıkış" />
+      <Action Id="Logon" Caption="Giriş" />
+      <Action Id="New" ShortCaption="Yeni" Caption="Yeni">
+        <DisableReasons>
+          <Reason Id="MasterObjectIsNew" Caption="" />
+        </DisableReasons>
+      </Action>
+      <Action Id="Refresh" ShortCaption="Yenile" Caption="Yenile" />
+      <Action Id="ResetPassword" Caption="Şifreyi Yenile" ConfirmationMessage="ŞifreyiYenile" ToolTip="Seçilen kullanıcı için yeni bir şifre oluştur" />
+      <Action Id="Save" ShortCaption="Kaydet" Caption="Kaydet" />
+      <Action Id="SaveAndClose" ShortCaption="Kaydet ve Kapat" Caption="Kaydet ve Kapat" />
+      <Action Id="SaveAndNew" ShortCaption="Kaydet ve Yeni" Caption="Kaydet ve Yeni" />
+      <Action Id="Unlink" ShortCaption="Çıkar" Caption="Çıkar" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Reports" Index="0" />
+      <ActionContainer Id="Tools">
+        <ActionLink ActionId="PauseRecording" Index="-1" Removed="True" />
+        <ActionLink ActionId="SaveScript" Index="-1" Removed="True" />
+        <ActionLink ActionId="ShowScript" Index="-1" Removed="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="ResetViewSettings" Index="-1" Removed="True" />
+        <ActionLink ActionId="ResetViewSettings_Copy  --   Action = ResetViewSettings" Index="-1" IsNewNode="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Security.AuthenticationStandardLogonParameters">
+      <OwnMembers>
+        <Member Name="Password" Caption="Şifre" />
+        <Member Name="UserName" Caption="Kullanıcı Adı" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordOnLogonParameters">
+      <OwnMembers>
+        <Member Name="ConfirmPassword" Caption="Şifreyi Doğrula" />
+        <Member Name="NewPassword" Caption="Yeni Şifre" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ChangePasswordParameters">
+      <OwnMembers>
+        <Member Name="OldPassword" Caption="Eski Şifre" />
+      </OwnMembers>
+    </Class>
+    <Class Name="DevExpress.ExpressApp.Security.ResetPasswordParameters">
+      <OwnMembers>
+        <Member Name="Password" Caption="Şifre" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.CikisDetay" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DevletIhale+AcikArtirmaFirma" DefaultListViewNewItemRowPosition="Bottom" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DevletIhaleIlan" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.Dosya" IsCloneable="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DosyaFirma" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DosyaMalzeme" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DosyaMalzemeBirimFiyat" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.DosyaTalep" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.GirisDetay" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.Kamulastirma" IsCloneable="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.KamulastirmaDonemi" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.KamulastirmaProgrami" IsVisibleInReports="True" IsCloneable="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.Mail" IsVisibleInReports="False" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.MudurlukButce" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.Sartnameler" IsVisibleInReports="False" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.SayimDetay" IsVisibleInReports="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.Talep" IsCloneable="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.TalepDetay" IsCloneable="True" />
+    <Class Name="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.ZimmetDetay" IsVisibleInReports="True" />
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Captions">
+      <LocalizationItem Name="MyAccount" Value="Hesabım" />
+      <LocalizationItem Name="SelectAll" Value="(Tümünü Seç)" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Confirmations">
+      <LocalizationItem Name="Cancel" Value="Kaydedilmeyen veriler kaybolacak. Devam etmek istiyor musunuz?" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Controls" IsNewNode="True">
+      <LocalizationGroup Name="DevExpress.ASPxGridView" IsNewNode="True">
+        <LocalizationItem Name="Alt_Collapse" Value="[Kapat]" IsNewNode="True" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.XtraEditors" IsNewNode="True" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.Data.Filtering.Aggregate">
+        <LocalizationItem Name="Avg" Value="Ort" />
+        <LocalizationItem Name="Count" Value="Sayı" />
+        <LocalizationItem Name="Max" Value="Maks" />
+        <LocalizationItem Name="Single" Value="Tek" />
+        <LocalizationItem Name="Sum" Value="Toplam" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.ExpressApp.Editors.ViewItemVisibility">
+        <LocalizationItem Name="Hide" Value="Sakla" />
+        <LocalizationItem Name="Show" Value="Göster" />
+        <LocalizationItem Name="ShowEmptySpace" Value="Boşluğu göster" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.StringComparisonType">
+        <LocalizationItem Name="Contains" Value="İçeren" />
+        <LocalizationItem Name="EndsWith" Value="İle Biten" />
+        <LocalizationItem Name="Equals" Value="Eşit" />
+        <LocalizationItem Name="NotEquals" Value="Eşit Değil" />
+        <LocalizationItem Name="StartsWith" Value="İle Başlayan" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValidationOutcome">
+        <LocalizationItem Name="Error" Value="Hata" />
+        <LocalizationItem Name="Information" Value="Bilgi" />
+        <LocalizationItem Name="Skipped" Value="Atlandı" />
+        <LocalizationItem Name="Valid" Value="Geçerli" />
+        <LocalizationItem Name="Warning" Value="Uyarı" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValidationResultType">
+        <LocalizationItem Name="Error" Value="Hata" />
+        <LocalizationItem Name="Information" Value="Bilgi" />
+        <LocalizationItem Name="Warning" Value="Uyarı" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Validation.ValueComparisonType">
+        <LocalizationItem Name="Equals" Value="Eşittir" />
+        <LocalizationItem Name="GreaterThan" Value="Büyüktür" />
+        <LocalizationItem Name="GreaterThanOrEqual" Value="Büyük Eşittir" />
+        <LocalizationItem Name="LessThan" Value="Küçüktür" />
+        <LocalizationItem Name="LessThanOrEqual" Value="Küçük Eşittir" />
+        <LocalizationItem Name="NotEquals" Value="Eşit Değildir" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+    <LocalizationGroup Name="Exceptions">
+      <LocalizationItem Name="CanNotDeleteObject" Value="Güvenlik nedeniyle {0} objesini silemezsiniz." />
+      <LocalizationItem Name="CanNotSaveObject" Value="Güvenlik nedeniyle {0} objesini silemezsiniz" />
+      <LocalizationGroup Name="UserVisibleExceptions">
+        <LocalizationGroup Name="Security">
+          <LocalizationItem Name="LoginFailed" Value="'{0}' için giriş başarısız oldu. {1}" />
+          <LocalizationItem Name="NewPasswordIsEqualToOldPassword" Value="Yeni şifre eski şifre ile aynı." />
+          <LocalizationItem Name="OldPasswordIsWrong" Value="Eski şifre yanlış." />
+          <LocalizationItem Name="PasswordsAreDifferent" Value="Şifreler birbirinden farklı." />
+          <LocalizationItem Name="RetypeTheInformation" Value="Lütfen bilgilerinizi kontrol ederek tekrar deneyin." />
+          <LocalizationItem Name="UserNameIsEmpty" Value="Kullanıcı adı boş bırakılamaz." />
+        </LocalizationGroup>
+      </LocalizationGroup>
+    </LocalizationGroup>
+    <LocalizationGroup Name="Messages">
+      <LocalizationItem Name="BrowserIsIncompatible" Value="Tarayıcınız uygulama tarafından desteklenmiyor. Desteklenen tarayıcılar: Internet Explorer 9, Chrome, Safari, FireFox, Opera" />
+      <LocalizationItem Name="ThereAreNoRecordsToDisplay" Value="Gösterilecek kayıt yok." />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Texts">
+      <LocalizationItem Name="IgnoreWarning" Value="Uyarıları yoksay." />
+    </LocalizationGroup>
+  </Localization>
+  <Options CollectionsEditMode="View" />
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="16.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerAspNetModule" Version="16.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="16.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="16.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Contexts>
+      <ValidationContext Id="Accept" Caption="Kabul" />
+      <ValidationContext Id="Delete" Caption="Sil" />
+      <ValidationContext Id="DialogOk" Caption="Tamam" />
+      <ValidationContext Id="Save" Caption="Kaydet" />
+    </Contexts>
+    <ErrorMessageTemplates>
+      <RuleCombinationOfPropertiesIsUnique MessageTemplateFoundObjects="Bulunanlar:" />
+      <RuleIsReferenced MessageTemplateFoundObjects="Bulunanlar: " />
+      <RuleObjectExists MessageTemplateFoundObjects="Bulunanlar: " />
+      <RuleRequiredField MessageTemplateMustNotBeEmpty="&quot;{TargetPropertyName}&quot; alanı boş bırakılamaz." />
+      <RuleSearchObject MessageTemplateFoundObjects="Bulunanlar:" />
+    </ErrorMessageTemplates>
+    <Rules>
+      <RuleFromBoolProperty Id="EventIntervalValid" CustomMessageTemplate="Başlangıç tarihi bitiş tarihinden önce olmalıdır." />
+      <RuleUniqueValue Id="PermissionPolicyRoleBase_Name_RuleUniqueValue" CustomMessageTemplate="Sistemde bu isimde bir rol bulunmaktadır." />
+      <RuleUniqueValue Id="PermissionPolicyUser_UserName_RuleUniqueValue" CustomMessageTemplate="Bu kullanıcı adı sistemde mevcut." />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="AcikArtirmaFirma_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="AcikArtirmaFirma" ShowCaption="True" Caption="Acik Artirma Firma" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="AcikArtirmaFirma_col1" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Sira" ViewItem="Sira" Index="0" RelativeSize="4.5584045584045585" IsNewNode="True" />
+                  <LayoutItem Id="FirmaUnvan" ViewItem="FirmaUnvan" Index="1" RelativeSize="3.4188034188034186" IsNewNode="True" />
+                  <LayoutItem Id="FirmaUnvan2" ViewItem="FirmaUnvan2" Index="2" RelativeSize="92.022792022792018" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="AcikArtirmaFirma_col2" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="FirmaUnvan3" ViewItem="FirmaUnvan3" Index="0" RelativeSize="4.5584045584045585" IsNewNode="True" />
+                  <LayoutItem Id="Teklif" ViewItem="Teklif" Index="1" RelativeSize="95.441595441595439" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="AcikArtirmaFirma" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="AgacBirimMaliyeti_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.492866407263293">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="AgacBirimMaliyeti">
+                <LayoutGroup Id="AgacBirimMaliyeti_col1">
+                  <LayoutItem Id="Agac" RelativeSize="21.428571428571427" />
+                  <LayoutItem Id="AgacMaliyeti" RelativeSize="50" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" Caption="Kullanıcı">
+                <LayoutItem Id="Kaydeden" RelativeSize="28.571428571428573" />
+                <LayoutItem Id="KayitTarihi" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="Degistiren" RelativeSize="21.428571428571427" />
+                <LayoutItem Id="DegistirmeTarihi" RelativeSize="28.571428571428573" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="KamulastirmaAgacs_Group" RelativeSize="79.507133592736707" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Araclar_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Id" Caption="Id" Index="1" PropertyName="Id" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AuthenticationStandardLogonParameters_DetailView">
+      <Items>
+        <StaticImage Id="LogonImage" Caption="Destek Hizmetleri" />
+        <StaticText Id="LogonText" Text="Hoşgeldiniz!   Destek Hizmetleri" />
+        <PropertyEditor Id="Password" Caption="Şifre" />
+        <PropertyEditor Id="UserName" Caption="Kullanıcı Adı" />
+      </Items>
+    </DetailView>
+    <DetailView Id="ChangePasswordOnLogonParameters_DetailView">
+      <Items>
+        <StaticText Id="ChangePasswordText" Text="Güvenlik nedenleriyle, şimdi kendi şifrenizi ayarlamanız gerekir. Lütfen aşağıdaki iki metin alanına yeni şifrenizi girin ve daha önce kullandığınız bir şifreyi tekrar kullanmamaya dikkat edin." />
+        <PropertyEditor Id="ConfirmPassword" Caption="Şifreyi Onayla" />
+        <PropertyEditor Id="NewPassword" Caption="Yeni Şifre" />
+      </Items>
+    </DetailView>
+    <DetailView Id="ChangePasswordParameters_DetailView">
+      <Items>
+        <StaticText Id="ChangePasswordText" Text="Şifrenizi değiştirmek için, lütfen aşağıdaki metin alanlarına eski ve yeni şifrelerinizi girin." />
+        <PropertyEditor Id="ConfirmPassword" Caption="Şifreyi Onayla" />
+        <PropertyEditor Id="NewPassword" Caption="Yeni Şifre" />
+        <PropertyEditor Id="OldPassword" Caption="Eski Şifre" />
+      </Items>
+    </DetailView>
+    <DetailView Id="Cikis_DetailView">
+      <Items>
+        <PropertyEditor Id="KayitKontrolYetkilisi" Caption="Kontrol Yetkilisi" DataSourceCriteria="[PersonelTip.Id] = 14" />
+      </Items>
+    </DetailView>
+    <DetailView Id="DayanikliTasinir_DetailView">
+      <Items>
+        <PropertyEditor Id="Aciklama" Caption="Açıklama" />
+      </Items>
+    </DetailView>
+    <ListView Id="DayanikliTasinir_ListView" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Birim Fiyat" PropertyName="GirisDetay.BirimFiyat" Caption="Birim Fiyatı" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Miktar" Width="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Dokumanlar_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Dokumanlar" Caption="Dökümanlar">
+                <LayoutGroup Id="Dokumanlar_col1">
+                  <LayoutItem Id="Mudurluk" RelativeSize="4.4260027662517292" />
+                  <LayoutItem Id="Aciklama" RelativeSize="3.3195020746887969" />
+                  <LayoutItem Id="File" RelativeSize="92.254495159059474" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2">
+                <LayoutItem Id="Kaydeden" RelativeSize="4.4260027662517292" />
+                <LayoutItem Id="KayitTarihi" RelativeSize="3.0428769017980635" />
+                <LayoutItem Id="Degistiren" RelativeSize="3.0428769017980635" />
+                <LayoutItem Id="DegistirmeTarihi" RelativeSize="89.488243430152139" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Dolasim_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Dolasim" Caption="Dolaşım">
+                <LayoutGroup Id="Dolasim_col1" RelativeSize="49.382716049382715">
+                  <LayoutItem Id="Aktif" RelativeSize="4.4260027662517292" />
+                  <LayoutItem Id="Ad" RelativeSize="95.573997233748273" />
+                </LayoutGroup>
+                <LayoutGroup Id="Dolasim_col2" RelativeSize="50.617283950617285" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2">
+                <LayoutGroup Id="Autoc40ad8b6-2c49-41ce-8684-92fea7230167" Caption="Autoc40ad8b6-2c49-41ce-8684-92fea7230167(10)" RelativeSize="50.617283950617285">
+                  <LayoutItem Id="Kaydeden" RelativeSize="5.1175656984785611" />
+                  <LayoutItem Id="KayitTarihi" RelativeSize="3.7344398340248963" />
+                  <LayoutItem Id="Degistiren" RelativeSize="3.7344398340248963" />
+                  <LayoutItem Id="DegistirmeTarihi" RelativeSize="87.413554633471648" />
+                </LayoutGroup>
+                <LayoutItem Id="Item3" RelativeSize="49.382716049382715" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Dosya_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="38.0716934487021">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Dosya">
+                <LayoutGroup Id="Dosya_col1" RelativeSize="48.148148148148145">
+                  <LayoutGroup Id="Item8" Direction="Vertical">
+                    <LayoutGroup Id="Auto49f82639-7798-4825-afe9-61e3b45ec7f3" RelativeSize="100">
+                      <LayoutGroup Id="Item10" RelativeSize="17.272727272727273" Caption="Item10" Direction="Horizontal">
+                        <LayoutItem Id="DosyaNo" ViewItem="DosyaNo" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
+                        <LayoutItem Id="DosyaTarihi" ShowCaption="False" ViewItem="DosyaTarihi" CaptionLocation="Right" Index="1" RelativeSize="50" IsNewNode="True" Removed="True" />
+                      </LayoutGroup>
+                      <LayoutItem Id="DosyaTuru" Index="1" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinNiteligi" Index="2" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinMiktari" Index="3" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinAdi" Index="4" RelativeSize="24.545454545454547" />
+                      <LayoutItem Id="IdareYetkilisi" Index="5" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="Mudurluk" Index="6" RelativeSize="14.545454545454545" />
+                    </LayoutGroup>
+                    <LayoutItem Id="Item38" RelativeSize="4.918032786885246" Removed="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Dosya_col2" RelativeSize="51.851851851851855">
+                  <LayoutGroup Id="Item11" RelativeSize="47.61904761904762">
+                    <LayoutGroup Id="Item12" RelativeSize="46.564885496183209" />
+                    <LayoutGroup Id="Item16" RelativeSize="53.435114503816791">
+                      <LayoutItem Id="IhaleKanunNo" RelativeSize="30.188679245283019" />
+                      <LayoutItem Id="IhaleMaddeNo" RelativeSize="22.641509433962263" />
+                      <LayoutItem Id="TeslimEdenIdareYetkilisi" RelativeSize="47.169811320754718" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item14" RelativeSize="52.38095238095238">
+                    <LayoutGroup Id="Item17" RelativeSize="37.404580152671755" />
+                    <LayoutGroup Id="Item19" RelativeSize="62.595419847328245">
+                      <LayoutItem Id="YaklasikMaliyetHesapKontrol" RelativeSize="24.615384615384617" />
+                      <LayoutItem Id="YaklasikMaliyetHesapOnay" RelativeSize="75.384615384615387" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2">
+                <LayoutGroup Id="Item13">
+                  <LayoutGroup Id="Auto9f926985-12ea-4730-a300-9e64b0d8506e" RelativeSize="85.1145038167939">
+                    <LayoutGroup Id="Item15" RelativeSize="37.037037037037038">
+                      <LayoutGroup Id="Item21">
+                        <LayoutItem Id="IhaleOnayNo" RelativeSize="12.568306010928962" />
+                        <LayoutItem Id="IhaleOnayTarihi" RelativeSize="8.19672131147541" />
+                        <LayoutItem Id="Odemegunu" RelativeSize="8.19672131147541" />
+                        <LayoutItem Id="TeslimYeri" RelativeSize="8.19672131147541" />
+                        <LayoutItem Id="TeslimSuresi" RelativeSize="8.19672131147541" />
+                        <LayoutItem Id="AvansAlan" RelativeSize="8.7431693989071046" />
+                        <LayoutItem Id="OdemeEmriTarihi" RelativeSize="8.19672131147541" />
+                        <LayoutItem Id="TahsisatDurumu" RelativeSize="37.704918032786885" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item22" RelativeSize="30.579297245963911">
+                      <LayoutGroup Id="Item23" RelativeSize="47.533632286995513">
+                        <LayoutItem Id="IrtibatKisi1" RelativeSize="33.333333333333336" />
+                        <LayoutItem Id="IrtibatKisi2" RelativeSize="34.722222222222221" />
+                        <LayoutItem Id="IrtibatKisi3" RelativeSize="31.944444444444443" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item30" RelativeSize="52.466367713004487">
+                        <LayoutItem Id="TutanakTarihi" RelativeSize="49.411764705882355" />
+                        <LayoutItem Id="TutanakTeslimEden" RelativeSize="50.588235294117645" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item25" RelativeSize="32.383665716999047">
+                      <LayoutGroup Id="Item26" RelativeSize="47.533632286995513">
+                        <LayoutItem Id="SartnameDuzenlenecek" RelativeSize="33.333333333333336" />
+                        <LayoutItem Id="SozlesmeDuzenlecek" RelativeSize="34.722222222222221" />
+                        <LayoutItem Id="SozlesmeTarihi" RelativeSize="31.944444444444443" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Item28" RelativeSize="52.466367713004487">
+                        <LayoutItem Id="TeklifTarihi" RelativeSize="32.941176470588232" />
+                        <LayoutItem Id="TeklifinBittigiTarih" RelativeSize="32.941176470588232" />
+                        <LayoutItem Id="TeklifinBittiSaat" RelativeSize="34.117647058823529" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item20" RelativeSize="14.885496183206106" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item3">
+                <LayoutGroup Id="Item32" RelativeSize="46.913580246913583">
+                  <LayoutItem Id="TedarikciFirma" RelativeSize="11.068702290076336" />
+                  <LayoutItem Id="FaturaNo" RelativeSize="8.3969465648854964" />
+                  <LayoutItem Id="FaturaTarihi" RelativeSize="8.3969465648854964" />
+                  <LayoutItem Id="FaturaTutari" RelativeSize="8.3969465648854964" />
+                  <LayoutItem Id="Aciklama" RelativeSize="63.740458015267173" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item7" RelativeSize="53.086419753086417" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item4">
+                <LayoutGroup Id="Item18">
+                  <LayoutGroup Id="Auto087b7712-386e-4fbd-8773-205e95105a23" Caption="Auto087b7712-386e-4fbd-8773-205e95105a23(77)" RelativeSize="37.511870845204179">
+                    <LayoutItem Id="MudurlukKurumsal" RelativeSize="10.687022900763358" />
+                    <LayoutItem Id="MudurlukFonksiyonel" RelativeSize="8.01526717557252" />
+                    <LayoutItem Id="Finansman" RelativeSize="8.3969465648854964" />
+                    <LayoutItem Id="Gider" RelativeSize="8.01526717557252" />
+                    <LayoutItem Id="Item9" RelativeSize="64.8854961832061" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item35" RelativeSize="62.488129154795821" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item5">
+                <LayoutItem Id="DosyaAciklama" RelativeSize="32.824427480916029" />
+                <LayoutItem Id="Item24" RelativeSize="67.175572519083971" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item6">
+                <LayoutGroup Id="Item29">
+                  <LayoutGroup Id="Auto2edfde9b-0fd5-47b6-94f6-2f6d7fd05056" RelativeSize="33.903133903133906">
+                    <LayoutItem Id="Kaydeden" RelativeSize="10.687022900763358" />
+                    <LayoutItem Id="KayitTarihi" RelativeSize="8.01526717557252" />
+                    <LayoutItem Id="Degistiren" RelativeSize="8.3969465648854964" />
+                    <LayoutItem Id="DegistirmeTarihi" RelativeSize="8.01526717557252" />
+                    <LayoutItem Id="Item27" RelativeSize="64.8854961832061" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item39" RelativeSize="66.0968660968661" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="0.12360939431396786" />
+          <TabbedGroup Id="Tabs" RelativeSize="61.804697156983934" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Dosya_DetailView_Gözlem">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="38.742138364779876">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Dosya">
+                <LayoutGroup Id="Dosya_col1" RelativeSize="48.148148148148145">
+                  <LayoutGroup Id="Item8" Direction="Vertical">
+                    <LayoutGroup Id="Auto49f82639-7798-4825-afe9-61e3b45ec7f3" RelativeSize="100">
+                      <LayoutGroup Id="Item10" Direction="Horizontal" RelativeSize="17.272727272727273" Caption="Item10">
+                        <LayoutItem Id="DosyaNo" ViewItem="DosyaNo" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
+                        <LayoutItem Id="DosyaTarihi" ShowCaption="False" ViewItem="DosyaTarihi" CaptionLocation="Right" Index="1" RelativeSize="50" IsNewNode="True" Removed="True" />
+                      </LayoutGroup>
+                      <LayoutItem Id="DosyaTuru" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinNiteligi" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinMiktari" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="IsinAdi" RelativeSize="24.545454545454547" />
+                      <LayoutItem Id="IdareYetkilisi" RelativeSize="10.909090909090908" />
+                      <LayoutItem Id="Mudurluk" RelativeSize="14.545454545454545" />
+                    </LayoutGroup>
+                    <LayoutItem Id="Item38" Removed="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Dosya_col2" RelativeSize="51.851851851851855">
+                  <LayoutGroup Id="Item11" RelativeSize="47.61904761904762">
+                    <LayoutGroup Id="Item12" RelativeSize="46.564885496183209" />
+                    <LayoutGroup Id="Item16" RelativeSize="53.435114503816791">
+                      <LayoutItem Id="IhaleKanunNo" RelativeSize="30.188679245283019" />
+                      <LayoutItem Id="IhaleMaddeNo" RelativeSize="22.641509433962263" />
+                      <LayoutItem Id="TeslimEdenIdareYetkilisi" RelativeSize="47.169811320754718" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item14" RelativeSize="52.38095238095238">
+                    <LayoutGroup Id="Item17" RelativeSize="37.404580152671755" />
+                    <LayoutGroup Id="Item19" RelativeSize="62.595419847328245">
+                      <LayoutItem Id="YaklasikMaliyetHesapKontrol" RelativeSize="24.615384615384617" />
+                      <LayoutItem Id="YaklasikMaliyetHesapOnay" RelativeSize="75.384615384615387" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item33">
+                <LayoutItem Id="GeciciTeminat" RelativeSize="10.687022900763358" />
+                <LayoutItem Id="KullanilabilirOdenekTutari" RelativeSize="11.068702290076336" />
+                <LayoutItem Id="SartnameBedeli" RelativeSize="78.2442748091603" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item6">
+                <LayoutGroup Id="Item29">
+                  <LayoutGroup Id="Auto2edfde9b-0fd5-47b6-94f6-2f6d7fd05056" RelativeSize="33.713200379867047">
+                    <LayoutItem Id="Kaydeden" RelativeSize="10.687022900763358" />
+                    <LayoutItem Id="KayitTarihi" RelativeSize="8.01526717557252" />
+                    <LayoutItem Id="Degistiren" RelativeSize="8.3969465648854964" />
+                    <LayoutItem Id="DegistirmeTarihi" RelativeSize="8.3969465648854964" />
+                    <LayoutItem Id="Item27" RelativeSize="64.503816793893137" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item39" RelativeSize="66.286799620132953" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="0.12578616352201258" />
+          <TabbedGroup Id="Tabs" RelativeSize="61.132075471698116" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Dosya_DetailView_Tahsisat">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Dosya">
+                <LayoutGroup Id="Dosya_col1">
+                  <LayoutGroup Id="Auto3f259f79-fafe-4a79-804c-fbf27f430380" Caption="Auto3f259f79-fafe-4a79-804c-fbf27f430380(6)" RelativeSize="65.6984785615491">
+                    <LayoutGroup Id="Item8" Direction="Vertical" RelativeSize="64.957264957264954">
+                      <LayoutGroup Id="Auto49f82639-7798-4825-afe9-61e3b45ec7f3" RelativeSize="100">
+                        <LayoutGroup Id="Item10" RelativeSize="8.7356321839080469" Direction="Horizontal" Caption="Item10">
+                          <LayoutItem Id="DosyaNo" ViewItem="DosyaNo" Index="0" RelativeSize="49.924812030075188" IsNewNode="True" Removed="True" />
+                          <LayoutItem Id="DosyaTarihi" ShowCaption="False" ViewItem="DosyaTarihi" CaptionLocation="Right" Index="1" RelativeSize="50.075187969924812" IsNewNode="True" Removed="True" />
+                        </LayoutGroup>
+                        <LayoutItem Id="DosyaTuru" RelativeSize="5.5172413793103452" />
+                        <LayoutItem Id="IsinNiteligi" RelativeSize="5.5172413793103452" />
+                        <LayoutItem Id="IsinMiktari" RelativeSize="5.5172413793103452" />
+                        <LayoutItem Id="IsinAdi" RelativeSize="61.839080459770116" />
+                        <LayoutItem Id="IdareYetkilisi" RelativeSize="5.5172413793103452" />
+                        <LayoutItem Id="Mudurluk" RelativeSize="7.35632183908046" />
+                      </LayoutGroup>
+                      <LayoutItem Id="Item38" Removed="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item4" RelativeSize="35.042735042735046">
+                      <LayoutGroup Id="Item18" Direction="Vertical">
+                        <LayoutGroup Id="Auto087b7712-386e-4fbd-8773-205e95105a23" RelativeSize="100">
+                          <LayoutItem Id="MudurlukKurumsal" RelativeSize="7.35632183908046" />
+                          <LayoutItem Id="MudurlukFonksiyonel" RelativeSize="5.5172413793103452" />
+                          <LayoutItem Id="Finansman" RelativeSize="5.5172413793103452" />
+                          <LayoutItem Id="Gider" RelativeSize="5.5172413793103452" />
+                          <LayoutItem Id="Item9" RelativeSize="76.0919540229885" />
+                        </LayoutGroup>
+                        <LayoutItem Id="Item35" RelativeSize="5.7142857142857144" Removed="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item3" RelativeSize="34.3015214384509">
+                    <LayoutGroup Id="Item32" RelativeSize="51.21477162293489">
+                      <LayoutItem Id="TedarikciFirma" RelativeSize="14.953271028037383" />
+                      <LayoutItem Id="FaturaNo" RelativeSize="11.214953271028037" />
+                      <LayoutItem Id="FaturaTarihi" RelativeSize="11.214953271028037" />
+                      <LayoutItem Id="FaturaTutari" RelativeSize="11.214953271028037" />
+                      <LayoutItem Id="Aciklama" RelativeSize="51.401869158878505" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Item7" RelativeSize="48.78522837706511" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item6">
+                <LayoutGroup Id="Item29">
+                  <LayoutGroup Id="Auto2edfde9b-0fd5-47b6-94f6-2f6d7fd05056" RelativeSize="33.713200379867047">
+                    <LayoutItem Id="Kaydeden" RelativeSize="4.4260027662517292" />
+                    <LayoutItem Id="KayitTarihi" RelativeSize="3.0428769017980635" />
+                    <LayoutItem Id="Degistiren" RelativeSize="3.0428769017980635" />
+                    <LayoutItem Id="DegistirmeTarihi" RelativeSize="3.0428769017980635" />
+                    <LayoutItem Id="Item27" RelativeSize="86.445366528354086" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item39" RelativeSize="66.286799620132953" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Dosya_DosyaFirmas_ListView">
+      <Columns>
+        <ColumnInfo Id="Tedarikcimi" SortOrder="Descending" />
+      </Columns>
+    </ListView>
+    <ListView Id="Dosya_DosyaTaleps_ListView" MasterDetailMode="ListViewAndDetailView" AllowEdit="True" />
+    <ListView Id="Dosya_ListView">
+      <Columns>
+        <ColumnInfo Id="YaklasikMaliyet" Index="-1" />
+        <ColumnInfo Id="IhaleyiAldigiTutar" Caption="İhaleyi Aldığı Tutar" Index="16" />
+        <ColumnInfo Id="FaturaTutari" Index="19" />
+      </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;16.1.5.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer /&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" />
+    </ListView>
+    <DetailView Id="DosyaDolasim_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="36.057068741893644">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="DosyaDolasim" Caption="Dosya Dolaşım">
+                <LayoutGroup Id="Autob87022fa-16ea-41bb-a1cb-83d7111500c0" Caption="Autob87022fa-16ea-41bb-a1cb-83d7111500c0(5)" RelativeSize="57.758620689655174">
+                  <LayoutGroup Id="DosyaDolasim_col1" RelativeSize="49.952516619183285" />
+                  <LayoutGroup Id="DosyaDolasim_col2" RelativeSize="50.047483380816715" />
+                </LayoutGroup>
+                <LayoutItem Id="Aciklama" RelativeSize="42.241379310344826" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item2">
+                <LayoutGroup Id="Auto8c84de77-a55a-4012-a90e-0d6d0bc57251" Caption="Auto8c84de77-a55a-4012-a90e-0d6d0bc57251(15)" RelativeSize="56.790123456790127">
+                  <LayoutItem Id="Kaydeden" RelativeSize="16.379310344827587" />
+                  <LayoutItem Id="KayitTarihi" RelativeSize="12.068965517241379" />
+                  <LayoutItem Id="Degistiren" RelativeSize="12.068965517241379" />
+                  <LayoutItem Id="DegistirmeTarihi" RelativeSize="59.482758620689658" />
+                </LayoutGroup>
+                <LayoutItem Id="Item3" RelativeSize="43.209876543209873" />
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="63.942931258106356" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Hesap_ListView">
+      <Columns>
+        <ColumnInfo Id="Degistiren" Index="-1" />
+        <ColumnInfo Id="DegistirmeTarihi" Index="-1" />
+        <ColumnInfo Id="Kaydeden" Index="-1" />
+        <ColumnInfo Id="KayitTarihi" Index="-1" />
+        <ColumnInfo Id="Yil" Index="0" />
+        <ColumnInfo Id="Kod" Index="1" />
+        <ColumnInfo Id="Ad" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="Ihale_ListView" Caption="Tüm Ihaleler" />
+    <ListView Id="MailGonder_ListView">
+      <Columns>
+        <ColumnInfo Id="Degistiren" Index="-1" />
+        <ColumnInfo Id="DegistirmeTarihi" Index="-1" />
+        <ColumnInfo Id="Kaydeden" Index="-1" />
+        <ColumnInfo Id="KayitTarihi" Index="-1" />
+        <ColumnInfo Id="Dosya" Index="0" LookupProperty="DosyaNo" />
+        <ColumnInfo Id="Aciklama" Index="1" />
+        <ColumnInfo Id="MudurlukAdi" PropertyName="Dosya.Mudurluk.Ad" Caption="Müdürlük" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Durum" Index="3" />
+        <ColumnInfo Id="MailTuru" Index="4" />
+      </Columns>
+    </ListView>
+    <DetailView Id="MailTeklif_DetailView">
+      <Items>
+        <PropertyEditor Id="Dosya" LookupProperty="DosyaNo" />
+      </Items>
+    </DetailView>
+    <ListView Id="Malzeme_CikisDetays_ListView">
+      <Columns>
+        <ColumnInfo Id="SatisTutar" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Mudurluk_ListView">
+      <Columns>
+        <ColumnInfo Id="Degistiren" Index="-1" />
+        <ColumnInfo Id="DegistirmeTarihi" Index="-1" />
+        <ColumnInfo Id="Kaydeden" Index="-1" />
+        <ColumnInfo Id="KayitTarihi" Index="-1" />
+        <ColumnInfo Id="IdariKimlikKod" Index="4" />
+        <ColumnInfo Id="Personel" Index="5" />
+        <ColumnInfo Id="KullanilanButce" Index="7" />
+        <ColumnInfo Id="Butce" Index="8" />
+      </Columns>
+    </ListView>
+    <ListView Id="MudurlukButces_ListView_GenelButce" ClassName="Solution2.Module.BusinessObjects.Analitik_DestekHizmetleri.MudurlukButce" Caption="Mudurluk Butce _GenelButce" Criteria="StartsWith([Yil.Ad], '2015 Yılı')" ShowAutoFilterRow="True" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="DogrudanTeminButce" PropertyName="DogrudanTeminButce" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="DogrudanTeminKullanilanTutar" PropertyName="DogrudanTeminKullanilanTutar" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="DogrudanTeminKullanilanTutarTahsisat" PropertyName="DogrudanTeminKullanilanTutarTahsisat" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="GiderAdKod" PropertyName="GiderAdKod" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="GiderTuru" PropertyName="GiderTuru" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="GiderTuruGenel" PropertyName="GiderTuruGenel" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Id" PropertyName="Id" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="KullanilanTutar" PropertyName="KullanilanTutar" Width="50" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Butce" PropertyName="Butce" Width="50" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Yil" PropertyName="Yil" Width="70" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Gider" PropertyName="Gider" Width="70" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Mudurluk" PropertyName="Mudurluk" Width="70" Index="3" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="NewReportWizardParameters_DetailView">
+      <Items>
+        <PropertyEditor Id="DataType" Caption="Veri Tipi" />
+        <PropertyEditor Id="DisplayName" Caption="Rapor Adı" />
+        <PropertyEditor Id="ReportType" Caption="Rapor Türü" />
+      </Items>
+    </DetailView>
+    <DetailView Id="ResetPasswordParameters_DetailView">
+      <Items>
+        <PropertyEditor Id="Password" Caption="Şifre" />
+        <StaticText Id="ResetPasswordText" Text="Kullanıcının şifresini ayarlamak, kullanıcı için otomatik olarak yeni bir şifre oluşturur ve aynı zamanda kullanıcının eski şifresiyle girişini devre dışı bırakır. Ardından yeni parolayı kullanıcıya iletmeniz gerekir; böylece uygulama ile çalışmaya devam edebilirsiniz. Bunu yapmak istediğinden emin misin?" />
+      </Items>
+    </DetailView>
+    <DetailView Id="RuleSetValidationResult_DetailView" Caption="Doğrulama Sonuçları">
+      <Items>
+        <PropertyEditor Id="Results" Caption="Sonuçlar" />
+      </Items>
+    </DetailView>
+    <ListView Id="RuleSetValidationResult_ListView" Caption="Doğrulama Sonuçları" />
+    <ListView Id="RuleSetValidationResult_Results_ListView" Caption="Doğrulama Detayları" />
+    <ListView Id="RuleSetValidationResultItem_ListView" Caption="Doğrulama Detayları" />
+    <ListView Id="Talep_ListView_Mudurluk_DevamEden">
+      <Columns>
+        <ColumnInfo Id="YaklasikMaliyet" Caption="Yaklaşık Maliyet" Index="11" PropertyName="Dosya.YaklasikMaliyet" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>
